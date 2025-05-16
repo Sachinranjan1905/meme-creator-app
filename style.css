@@ -1,0 +1,171 @@
+* {
+  box-sizing: border-box;
+}
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f4f4f4;
+  height: 100vh;
+  overflow: hidden;
+}
+#app {
+  display: flex;
+  height: 100vh;
+}
+
+/* Side Menu */
+#sideMenu {
+  width: 240px;
+  background: #222;
+  color: white;
+  padding: 20px;
+  overflow-y: auto;
+}
+#sideMenu h2, #sideMenu h3 {
+  margin-top: 0;
+}
+#sideMenu ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+}
+#sideMenu ul li {
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-bottom: 5px;
+}
+#sideMenu ul li.active, #sideMenu ul li:hover {
+  background: #ff5722;
+}
+#sideMenu select, #sideMenu input[type="file"] {
+  width: 100%;
+  margin: 10px 0 20px;
+  padding: 6px;
+  border-radius: 4px;
+  border: none;
+}
+
+/* Main Content */
+main {
+  flex-grow: 1;
+  padding: 20px;
+  overflow-y: auto;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+h1 {
+  margin-bottom: 20px;
+}
+.upload-section {
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 500px;
+}
+.upload-section label {
+  display: block;
+  margin-bottom: 8px;
+}
+.upload-section input[type="file"] {
+  width: 100%;
+}
+
+.meme-preview {
+  position: relative;
+  width: 500px;
+  max-width: 90vw;
+  height: 350px;
+  background: #000;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.meme-preview img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+.meme-text {
+  position: absolute;
+  width: 90%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-weight: 900;
+  font-size: 32px;
+  text-align: center;
+  text-shadow: 3px 3px 5px #000;
+  user-select: none;
+  pointer-events: none;
+  padding: 0 10px;
+  word-wrap: break-word;
+  font-family: 'Impact', 'Arial Black', sans-serif;
+}
+.meme-text.top {
+  top: 10px;
+}
+.meme-text.bottom {
+  bottom: 10px;
+}
+
+.text-inputs {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 20px;
+}
+.text-inputs textarea {
+  flex: 1;
+  resize: vertical;
+  padding: 10px;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  min-height: 80px;
+}
+
+button {
+  padding: 12px 24px;
+  margin: 10px 10px 0 0;
+  border: none;
+  background-color: #ff5722;
+  color: white;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+button:hover {
+  background-color: #e64a19;
+}
+audio#bgMusic {
+  margin-top: 20px;
+  width: 100%;
+  max-width: 500px;
+}
+@media(max-width: 768px) {
+  #app {
+    flex-direction: column;
+  }
+  #sideMenu {
+    width: 100%;
+    height: auto;
+    padding-bottom: 10px;
+  }
+  main {
+    flex-grow: unset;
+    padding: 10px;
+  }
+  .text-inputs {
+    flex-direction: column;
+  }
+}
